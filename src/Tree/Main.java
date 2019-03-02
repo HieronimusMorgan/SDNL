@@ -12,20 +12,22 @@ package Tree;
 public class Main {
 
     public static void main(String[] args) {
-        Tree a = new Tree();
-        a.insert(42);
-        a.insert(21);
-        a.insert(38);
-        a.insert(27);
-        a.insert(71);
-        a.insert(82);
-        a.insert(55);
-        a.insert(63);
-        a.insert(6);
-        a.insert(2);
-        a.insert(40);
-        a.insert(12);
+        Tree number = new Tree();
+        number.insert(42);
+        number.insert(21);
+        number.insert(38);
+        number.insert(27);
+        number.insert(71);
+        number.insert(82);
+        number.insert(55);
+        number.insert(63);
+        number.insert(6);
+        number.insert(2);
+        number.insert(40);
+        number.insert(12);
         
-        a.search(2);
+        number.search(2);
+        
+        number.preOrder(number.getRoot());
     }
 }

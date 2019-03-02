@@ -5,10 +5,6 @@
  */
 package Tree;
 
-/**
- *
- * @author basisa03
- */
 public class TreeNode {
 
     private int data;

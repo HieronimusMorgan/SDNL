@@ -79,4 +79,28 @@ public class Tree {
     public boolean isEmpty() {
         return root == null;
     }
+
+    public void preOrder(TreeNode node) {
+        if (node != null) {
+            System.out.print(node.getData() + " ");
+            preOrder(node.getLeftNode());
+            preOrder(node.getRightNode());
+        }
+    }
+
+    public void inOrder(TreeNode node) {
+        if (node != null) {
+            preOrder(node.getLeftNode());
+            System.out.print(node.getData() + " ");
+            preOrder(node.getRightNode());
+        }
+    }
+
+    public void postOrder(TreeNode node) {
+        if (node != null) {
+            preOrder(node.getLeftNode());
+            preOrder(node.getRightNode());
+            System.out.print(node.getData() + " ");
+        }
+    }
 }
