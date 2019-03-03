@@ -28,6 +28,5 @@ public class Main {
         
         number.search(2);
         
-        number.preOrder(number.getRoot());
     }
 }

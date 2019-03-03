@@ -5,10 +5,6 @@
  */
 package Tree;
 
-/**
- *
- * @author basisa03
- */
 public class Tree {
 
     private TreeNode root;
@@ -43,7 +39,6 @@ public class Tree {
                         parent = parent.getLeftNode();
                     }
                 }
-
             }
         }
     }
