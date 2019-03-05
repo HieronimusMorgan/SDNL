@@ -25,8 +25,7 @@ public class Main {
         number.insert(2);
         number.insert(40);
         number.insert(12);
-        
-        number.search(2);
-        
+
+        number.search(63);
     }
 }

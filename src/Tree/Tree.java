@@ -47,7 +47,7 @@ public class Tree {
         TreeNode cari = root;
         while (!isEmpty()) {
             if (key == cari.getData()) {
-                System.out.println("ditemukan");
+                System.out.println("Ditemukan data ke - "+cari.getData());
                 return cari;
             } else {
                 if (key > cari.getData()) {
