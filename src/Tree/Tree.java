@@ -46,20 +46,24 @@ public class Tree {
     public TreeNode search(int key) {
         TreeNode cari = root;
         while (!isEmpty()) {
-            if (key == cari.getData()) {
-                System.out.println("Ditemukan data ke - "+cari.getData());
-                return cari;
+            if (cari == null) {
+                System.out.println("Data " + key + " Tidak Ada !");
+                break;
             } else {
-                if (key > cari.getData()) {
-                    System.out.println("Cabang kanan data ke - " + cari.getData());
-                    cari = cari.getRightNode();
+                if (key == cari.getData()) {
+                    System.out.println("Ditemukan data ke - " + cari.getData());
+                    return cari;
                 } else {
-                    System.out.println("Cabang kiri data ke - " + cari.getData());
-                    cari = cari.getLeftNode();
+                    if (key > cari.getData()) {
+                        System.out.println("Cabang kanan dari data ke - " + cari.getData());
+                        cari = cari.getRightNode();
+                    } else {
+                        System.out.println("Cabang kiri dari data ke - " + cari.getData());
+                        cari = cari.getLeftNode();
+                    }
                 }
             }
         }
-        System.out.println("Data " + key + " Tidak Ada !");
         return null;
     }
 
@@ -75,26 +79,38 @@ public class Tree {
         return root == null;
     }
 
-    public void preOrder(TreeNode node) {
+    public void preOrderTransversal() {
+        preOrderHelper(root);
+    }
+
+    public void inOrderTranversal() {
+        inOrderHelper(root);
+    }
+
+    public void postOrderTransversal() {
+        postOrderHelper(root);
+    }
+
+    private void preOrderHelper(TreeNode node) {
         if (node != null) {
             System.out.print(node.getData() + " ");
-            preOrder(node.getLeftNode());
-            preOrder(node.getRightNode());
+            preOrderHelper(node.getLeftNode());
+            preOrderHelper(node.getRightNode());
         }
     }
 
-    public void inOrder(TreeNode node) {
+    private void inOrderHelper(TreeNode node) {
         if (node != null) {
-            preOrder(node.getLeftNode());
+            inOrderHelper(node.getLeftNode());
             System.out.print(node.getData() + " ");
-            preOrder(node.getRightNode());
+            inOrderHelper(node.getRightNode());
         }
     }
 
-    public void postOrder(TreeNode node) {
+    private void postOrderHelper(TreeNode node) {
         if (node != null) {
-            preOrder(node.getLeftNode());
-            preOrder(node.getRightNode());
+            postOrderHelper(node.getLeftNode());
+            postOrderHelper(node.getRightNode());
             System.out.print(node.getData() + " ");
         }
     }

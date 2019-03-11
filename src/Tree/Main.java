@@ -13,6 +13,11 @@ public class Main {
 
     public static void main(String[] args) {
         Tree number = new Tree();
+        Tree b = new Tree();
+        int[] s = {50, 30, 39, 33, 34, 36, 35, 38, 37, 40, 55, 51, 54, 53, 52};
+        for (int i = 0; i < s.length; i++) {
+            b.insert(s[i]);
+        }
         number.insert(42);
         number.insert(21);
         number.insert(38);
@@ -27,5 +32,6 @@ public class Main {
         number.insert(12);
 
         number.search(63);
+        b.search(52);
     }
 }
