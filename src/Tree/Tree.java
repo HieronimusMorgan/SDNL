@@ -43,6 +43,17 @@ public class Tree {
         }
     }
 
+    public void insertNode(int key) {
+        TreeNode node = new TreeNode(key);
+        TreeNode parent;
+        if (root == null) {
+            root = node;
+        } else {
+            getRoot().insert(key);
+        }
+
+    }
+
     public TreeNode search(int key) {
         TreeNode cari = root;
         while (!isEmpty()) {
@@ -114,4 +125,5 @@ public class Tree {
             System.out.print(node.getData() + " ");
         }
     }
+
 }

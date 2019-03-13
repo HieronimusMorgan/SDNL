@@ -18,6 +18,23 @@ public class TreeNode {
         this.data = data;
     }
 
+    public void insert(int key) {
+        if (key > getData()) {
+            if (getRightNode() == null) {
+                setRightNode(new TreeNode(key));
+            } else {
+                getRightNode().insert(key);
+            }
+        } else {
+            if (getLeftNode() == null) {
+                setLeftNode(new TreeNode(key));
+            } else {
+                getLeftNode().insert(key);
+            }
+        }
+
+    }
+
     public int getData() {
         return data;
     }
