@@ -19,5 +19,12 @@ public class Main {
         number.preOrderTransversal();
         System.out.println("");
         number.postOrderTransversal();
+        System.out.println("");
+        number.depthNode(40);
+        System.out.println("");
+        number.leafNode();
+        System.out.println("");
+        number.descendant(21);
+        
     }
 }

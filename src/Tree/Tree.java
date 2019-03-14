@@ -45,13 +45,110 @@ public class Tree {
 
     public void insertNode(int key) {
         TreeNode node = new TreeNode(key);
-        TreeNode parent;
         if (root == null) {
             root = node;
         } else {
             getRoot().insert(key);
         }
 
+    }
+
+    public void depthNode(int key) {
+        TreeNode cari = root;
+        int hitung = 0;
+        while (!isEmpty()) {
+            if (cari == null) {
+                break;
+            } else {
+                if (key == cari.getData()) {
+                    System.out.println("Dept Node " + key + " adalah " + hitung);
+                    break;
+                } else {
+                    if (key > cari.getData()) {
+                        cari = cari.getRightNode();
+                        hitung++;
+                    } else {
+                        cari = cari.getLeftNode();
+                        hitung++;
+                    }
+                }
+            }
+        }
+    }
+
+    public void heightNode(int key) {
+        TreeNode cari = root;
+        int hitung = 1;
+        while (!isEmpty()) {
+            if (cari == null) {
+                break;
+            } else {
+                if (key == cari.getData()) {
+                    System.out.println("Height Node " + key + " adalah " + hitung);
+                    break;
+                } else {
+                    if (key > cari.getData()) {
+                        cari = cari.getRightNode();
+                        hitung++;
+                    } else {
+                        cari = cari.getLeftNode();
+                        hitung++;
+                    }
+                }
+            }
+        }
+    }
+
+    public void leafNode() {
+        postOrderLeaf(root);
+    }
+
+    private void postOrderLeaf(TreeNode node) {
+        if (node != null) {
+            if (node.getLeftNode() == null && node.getRightNode() == null) {
+                System.out.print(node.getData() + " ");
+            }
+            postOrderLeaf(node.getLeftNode());
+            postOrderLeaf(node.getRightNode());
+        }
+
+    }
+
+    public void descendant(int key) {
+        if (getRoot() == null) {
+            System.out.println("Empty !");
+        } else {
+            TreeNode node = descendantSearch(key);
+            if (node.getData() != key) {
+                System.out.println(node.getData() + " ");
+            }
+            preOrderHelper(node.getLeftNode());
+            preOrderHelper(node.getRightNode());
+        }
+    }
+
+    public TreeNode descendantSearch(int key) {
+        TreeNode cari = root;
+        TreeNode bantu = cari;
+        while (!isEmpty()) {
+            if (cari == null) {
+                System.out.println("Data " + key + " Tidak Ada !");
+                break;
+            } else {
+                if (key == cari.getData()) {
+                    return bantu;
+                } else {
+                    if (key > cari.getData()) {
+                        cari = cari.getRightNode();
+                    } else {
+                        cari = cari.getLeftNode();
+                    }
+                    bantu = cari;
+                }
+
+            }
+        }
+        return null;
     }
 
     public TreeNode search(int key) {
