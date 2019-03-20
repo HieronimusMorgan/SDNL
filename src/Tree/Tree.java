@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Tree;
 
 public class Tree {
 
     private TreeNode root;
+    private int size = 1;
 
     public Tree() {
     }
@@ -49,8 +45,8 @@ public class Tree {
             root = node;
         } else {
             getRoot().insert(key);
+            size++;
         }
-
     }
 
     public void depthNode(int key) {
@@ -61,7 +57,8 @@ public class Tree {
                 break;
             } else {
                 if (key == cari.getData()) {
-                    System.out.println("Dept Node " + key + " adalah " + hitung);
+                    System.out.println("Dept Node " 
+                            + key + " adalah " + hitung);
                     break;
                 } else {
                     if (key > cari.getData()) {
@@ -84,7 +81,8 @@ public class Tree {
                 break;
             } else {
                 if (key == cari.getData()) {
-                    System.out.println("Height Node " + key + " adalah " + hitung);
+                    System.out.println("Height Node " 
+                            + key + " adalah " + hitung);
                     break;
                 } else {
                     if (key > cari.getData()) {
@@ -127,7 +125,7 @@ public class Tree {
         }
     }
 
-    public TreeNode descendantSearch(int key) {
+    private TreeNode descendantSearch(int key) {
         TreeNode cari = root;
         TreeNode bantu = cari;
         while (!isEmpty()) {
@@ -145,7 +143,6 @@ public class Tree {
                     }
                     bantu = cari;
                 }
-
             }
         }
         return null;
@@ -159,20 +156,59 @@ public class Tree {
                 break;
             } else {
                 if (key == cari.getData()) {
-                    System.out.println("Ditemukan data ke - " + cari.getData());
+                    System.out.println("Ditemukan data ke - " 
+                            + cari.getData());
                     return cari;
                 } else {
                     if (key > cari.getData()) {
-                        System.out.println("Cabang kanan dari data ke - " + cari.getData());
+                        System.out.println("Cabang kanan dari data ke - " 
+                                + cari.getData());
                         cari = cari.getRightNode();
                     } else {
-                        System.out.println("Cabang kiri dari data ke - " + cari.getData());
+                        System.out.println("Cabang kiri dari data ke - " 
+                                + cari.getData());
                         cari = cari.getLeftNode();
                     }
                 }
             }
         }
         return null;
+    }
+
+    public void preOrderTransversal() {
+        preOrderHelper(root);
+    }
+
+    private void preOrderHelper(TreeNode node) {
+        if (node != null) {
+            System.out.print(node.getData() + " ");
+            preOrderHelper(node.getLeftNode());
+            preOrderHelper(node.getRightNode());
+        }
+    }
+
+    public void inOrderTranversal() {
+        inOrderHelper(root);
+    }
+
+    private void inOrderHelper(TreeNode node) {
+        if (node != null) {
+            inOrderHelper(node.getLeftNode());
+            System.out.print(node.getData() + " ");
+            inOrderHelper(node.getRightNode());
+        }
+    }
+
+    public void postOrderTransversal() {
+        postOrderHelper(root);
+    }
+
+    private void postOrderHelper(TreeNode node) {
+        if (node != null) {
+            postOrderHelper(node.getLeftNode());
+            postOrderHelper(node.getRightNode());
+            System.out.print(node.getData() + " ");
+        }
     }
 
     public TreeNode getRoot() {
@@ -187,40 +223,12 @@ public class Tree {
         return root == null;
     }
 
-    public void preOrderTransversal() {
-        preOrderHelper(root);
+    public int getSize() {
+        return size;
     }
 
-    public void inOrderTranversal() {
-        inOrderHelper(root);
-    }
-
-    public void postOrderTransversal() {
-        postOrderHelper(root);
-    }
-
-    private void preOrderHelper(TreeNode node) {
-        if (node != null) {
-            System.out.print(node.getData() + " ");
-            preOrderHelper(node.getLeftNode());
-            preOrderHelper(node.getRightNode());
-        }
-    }
-
-    private void inOrderHelper(TreeNode node) {
-        if (node != null) {
-            inOrderHelper(node.getLeftNode());
-            System.out.print(node.getData() + " ");
-            inOrderHelper(node.getRightNode());
-        }
-    }
-
-    private void postOrderHelper(TreeNode node) {
-        if (node != null) {
-            postOrderHelper(node.getLeftNode());
-            postOrderHelper(node.getRightNode());
-            System.out.print(node.getData() + " ");
-        }
+    public void setSize(int size) {
+        this.size = size;
     }
 
 }
