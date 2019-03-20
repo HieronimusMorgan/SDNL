@@ -8,17 +8,22 @@ public class Main {
         for (int i = 0; i < data.length; i++) {
             number.insertNode(data[i]);
         }
-
+        System.out.print("In Order      : ");
         number.inOrderTranversal();
         System.out.println("");
+        System.out.print("Pre Order     : ");
         number.preOrderTransversal();
         System.out.println("");
+        System.out.print("Post Order    : ");
         number.postOrderTransversal();
         System.out.println("");
+
         number.depthNode(40);
         System.out.println("");
+        System.out.print("Leaf Node     : ");
         number.leafNode();
-        System.out.println("nu " + number.getSize());
+        System.out.println("");
+        System.out.print("Descendant    : ");
         number.descendant(21);
 
     }

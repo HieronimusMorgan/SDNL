@@ -12,33 +12,6 @@ public class Tree {
         this.root = root;
     }
 
-    public void insert(int data) {
-        TreeNode node = new TreeNode(data);
-        TreeNode parent;
-        if (root == null) {
-            root = node;
-        } else {
-            parent = root;
-            while (true) {
-                if (data > parent.getData()) {
-                    if (parent.getRightNode() == null) {
-                        parent.setRightNode(node);
-                        break;
-                    } else {
-                        parent = parent.getRightNode();
-                    }
-                } else {
-                    if (parent.getLeftNode() == null) {
-                        parent.setLeftNode(node);
-                        break;
-                    } else {
-                        parent = parent.getLeftNode();
-                    }
-                }
-            }
-        }
-    }
-
     public void insertNode(int key) {
         TreeNode node = new TreeNode(key);
         if (root == null) {
@@ -57,7 +30,7 @@ public class Tree {
                 break;
             } else {
                 if (key == cari.getData()) {
-                    System.out.println("Dept Node " 
+                    System.out.println("Dept Node "
                             + key + " adalah " + hitung);
                     break;
                 } else {
@@ -81,7 +54,7 @@ public class Tree {
                 break;
             } else {
                 if (key == cari.getData()) {
-                    System.out.println("Height Node " 
+                    System.out.println("Height Node "
                             + key + " adalah " + hitung);
                     break;
                 } else {
@@ -156,17 +129,17 @@ public class Tree {
                 break;
             } else {
                 if (key == cari.getData()) {
-                    System.out.println("Ditemukan data ke - " 
+                    System.out.println("Ditemukan data ke - "
                             + cari.getData());
                     return cari;
                 } else {
                     if (key > cari.getData()) {
-                        System.out.println("Cabang kanan dari data ke - " 
-                                + cari.getData());
+                        System.out.println("Cabang kanan dari data "
+                                + "ke - " + cari.getData());
                         cari = cari.getRightNode();
                     } else {
-                        System.out.println("Cabang kiri dari data ke - " 
-                                + cari.getData());
+                        System.out.println("Cabang kiri dari data "
+                                + "ke - " + cari.getData());
                         cari = cari.getLeftNode();
                     }
                 }
