@@ -1,17 +1,17 @@
 package Tree;
 
 public class Tree {
-    
+
     private TreeNode root;
     private int size = 1;
-    
+
     public Tree() {
     }
-    
+
     public Tree(TreeNode root) {
         this.root = root;
     }
-    
+
     public void insertNode(int key) {
         TreeNode node = new TreeNode(key);
         if (root == null) {
@@ -21,7 +21,7 @@ public class Tree {
             size++;
         }
     }
-    
+
     public void depthNode(int key) {
         TreeNode cari = root;
         int hitung = 0;
@@ -45,7 +45,7 @@ public class Tree {
             }
         }
     }
-    
+
     public void heightNode(int key) {
         TreeNode cari = root;
         int hitung = 1;
@@ -69,54 +69,48 @@ public class Tree {
             }
         }
     }
-    
+
     public void leafNode() {
         postOrderLeaf(root);
     }
-    
+
     private void postOrderLeaf(TreeNode node) {
         if (node != null) {
+            postOrderLeaf(node.getLeftNode());
+            postOrderLeaf(node.getRightNode());
             if (node.getLeftNode() == null && node.getRightNode() == null) {
                 System.out.print(node.getData() + " ");
             }
-            postOrderLeaf(node.getLeftNode());
-            postOrderLeaf(node.getRightNode());
         }
-        
     }
-    
+
     public void descendant(int key) {
         TreeNode node = descendantSearch(key);
-        if (node.getData() != key) {
-            System.out.println(node.getData() + " ");
-        }
         preOrderHelper(node.getLeftNode());
         preOrderHelper(node.getRightNode());
     }
-    
+
     private TreeNode descendantSearch(int key) {
         TreeNode cari = root;
-        TreeNode bantu = cari;
         while (!isEmpty()) {
             if (cari == null) {
                 System.out.println("Data " + key + " Tidak Ada !");
                 break;
             } else {
                 if (key == cari.getData()) {
-                    return bantu;
+                    return cari;
                 } else {
                     if (key > cari.getData()) {
                         cari = cari.getRightNode();
                     } else {
                         cari = cari.getLeftNode();
                     }
-                    bantu = cari;
                 }
             }
         }
         return null;
     }
-    
+
     public TreeNode search(int key) {
         TreeNode cari = root;
         while (!isEmpty()) {
@@ -143,11 +137,11 @@ public class Tree {
         }
         return null;
     }
-    
+
     public void preOrderTransversal() {
         preOrderHelper(root);
     }
-    
+
     private void preOrderHelper(TreeNode node) {
         if (node != null) {
             System.out.print(node.getData() + " ");
@@ -155,11 +149,11 @@ public class Tree {
             preOrderHelper(node.getRightNode());
         }
     }
-    
+
     public void inOrderTranversal() {
         inOrderHelper(root);
     }
-    
+
     private void inOrderHelper(TreeNode node) {
         if (node != null) {
             inOrderHelper(node.getLeftNode());
@@ -167,11 +161,11 @@ public class Tree {
             inOrderHelper(node.getRightNode());
         }
     }
-    
+
     public void postOrderTransversal() {
         postOrderHelper(root);
     }
-    
+
     private void postOrderHelper(TreeNode node) {
         if (node != null) {
             postOrderHelper(node.getLeftNode());
@@ -179,25 +173,25 @@ public class Tree {
             System.out.print(node.getData() + " ");
         }
     }
-    
+
     public TreeNode getRoot() {
         return root;
     }
-    
+
     public void setRoot(TreeNode root) {
         this.root = root;
     }
-    
+
     public boolean isEmpty() {
         return root == null;
     }
-    
+
     public int getSize() {
         return size;
     }
-    
+
     public void setSize(int size) {
         this.size = size;
     }
-    
+
 }

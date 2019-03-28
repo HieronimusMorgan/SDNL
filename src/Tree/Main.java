@@ -19,12 +19,13 @@ public class Main {
         System.out.println("");
 
         number.depthNode(40);
+        number.heightNode(40);
         System.out.println("");
         System.out.print("Leaf Node     : ");
         number.leafNode();
         System.out.println("");
         System.out.print("Descendant    : ");
-        number.descendant(21);
+        number.descendant(38);
 
     }
 }
