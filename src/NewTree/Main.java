@@ -8,14 +8,14 @@ public class Main {
         for (int i = 0; i < data.length; i++) {
             number.insertNode(data[i]);
         }
-        System.out.print("In Order      : ");
+        System.out.print("Before Delete      : ");
         number.inOrderTranversal();
         System.out.println("");
         number.delete(12);
         number.delete(27);
         number.delete(6);
         number.delete(55);
-        System.out.print("In Order      : ");
+        System.out.print("After Delete       : ");
         number.inOrderTranversal();
         System.out.println("");
     }

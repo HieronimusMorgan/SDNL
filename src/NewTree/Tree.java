@@ -42,29 +42,30 @@ public class Tree {
 
     public boolean delete(int key) {
         TreeNode bantu = search(key);
+        TreeNode parent = getCurrent(key);
         if (bantu.getLeftNode() == null && bantu.getRightNode() == null) {
-            if (getCurrent(key).getLeftNode() == bantu) {
-                getCurrent(key).setLeftNode(null);
+            if (parent.getLeftNode() == bantu) {
+                parent.setLeftNode(null);
                 return true;
             } else {
-                getCurrent(key).setRightNode(null);
+                parent.setRightNode(null);
                 return true;
             }
         } else if (bantu.getLeftNode() == null || bantu.getRightNode() == null) {
-            if (getCurrent(key).getLeftNode() == bantu) {
+            if (parent.getLeftNode() == bantu) {
                 if (bantu.getLeftNode() == null) {
-                    getCurrent(key).setLeftNode(bantu.getRightNode());
+                    parent.setLeftNode(bantu.getRightNode());
                     return true;
                 } else {
-                    getCurrent(key).setLeftNode(bantu.getLeftNode());
+                    parent.setLeftNode(bantu.getLeftNode());
                     return true;
                 }
             } else {
                 if (bantu.getLeftNode() == null) {
-                    getCurrent(key).setRightNode(bantu.getRightNode());
+                    parent.setRightNode(bantu.getRightNode());
                     return true;
                 } else {
-                    getCurrent(key).setRightNode(bantu.getLeftNode());
+                    parent.setRightNode(bantu.getLeftNode());
                     return true;
                 }
             }
