@@ -1,4 +1,4 @@
-package javaapplication1;
+package NewTree;
 
 public class Tree {
 
@@ -74,18 +74,6 @@ public class Tree {
         return false;
     }
 
-    public void inOrderTranversal() {
-        inOrderHelper(root);
-    }
-
-    private void inOrderHelper(TreeNode node) {
-        if (node != null) {
-            inOrderHelper(node.getLeftNode());
-            System.out.print(node.getData() + " ");
-            inOrderHelper(node.getRightNode());
-        }
-    }
-
     public TreeNode getCurrent(int key) {
         TreeNode cari = root;
         TreeNode parent = root;
@@ -107,6 +95,18 @@ public class Tree {
             }
         }
         return null;
+    }
+
+    public void inOrderTranversal() {
+        inOrderHelper(root);
+    }
+
+    private void inOrderHelper(TreeNode node) {
+        if (node != null) {
+            inOrderHelper(node.getLeftNode());
+            System.out.print(node.getData() + " ");
+            inOrderHelper(node.getRightNode());
+        }
     }
 
     public TreeNode getRoot() {

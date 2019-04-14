@@ -1,4 +1,4 @@
-package javaapplication1;
+package NewTree;
 
 public class TreeNode {
 
