@@ -3,7 +3,6 @@ package NewTree;
 public class Tree {
 
     private TreeNode root;
-    private int size = 1;
 
     public Tree() {
     }
@@ -18,7 +17,6 @@ public class Tree {
             root = node;
         } else {
             getRoot().insert(key);
-            size++;
         }
     }
 
@@ -119,13 +117,5 @@ public class Tree {
 
     public boolean isEmpty() {
         return root == null;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
     }
 }
