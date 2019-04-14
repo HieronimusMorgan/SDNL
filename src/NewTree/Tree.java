@@ -43,7 +43,8 @@ public class Tree {
     public boolean delete(int key) {
         TreeNode bantu = search(key);
         TreeNode parent = getCurrent(key);
-        if (bantu.getLeftNode() == null && bantu.getRightNode() == null) {
+        if (bantu.getLeftNode() == null
+                && bantu.getRightNode() == null) {
             if (parent.getLeftNode() == bantu) {
                 parent.setLeftNode(null);
                 return true;
@@ -51,7 +52,8 @@ public class Tree {
                 parent.setRightNode(null);
                 return true;
             }
-        } else if (bantu.getLeftNode() == null || bantu.getRightNode() == null) {
+        } else if (bantu.getLeftNode() == null
+                || bantu.getRightNode() == null) {
             if (parent.getLeftNode() == bantu) {
                 if (bantu.getLeftNode() == null) {
                     parent.setLeftNode(bantu.getRightNode());
