@@ -71,6 +71,23 @@ public class Tree {
                     return true;
                 }
             }
+        } else {
+            TreeNode predesessor = getPredeccessor(bantu);
+            System.out.println(predesessor.getData());
+            if (bantu.getLeftNode() != null && bantu.getRightNode() != null) {
+                bantu.setData(predesessor.getData());
+                if (!predesessor.isLeaf()) {
+                    bantu.getLeftNode().setRightNode(predesessor.getLeftNode());
+//                    getCurrent(predesessor.getData()).setRightNode(predesessor.getLeftNode());                    
+                    return true;
+                }else{
+                    bantu.getLeftNode().setRightNode(null);
+                    return true;
+//                    getCurrent(predesessor.getData()).setRightNode(null);
+                }
+//                return true;
+            }
+
         }
         return false;
     }
@@ -98,14 +115,25 @@ public class Tree {
         return null;
     }
 
+    public TreeNode getPredeccessor(TreeNode cari) {
+        cari = cari.getLeftNode();
+        while (true) {
+            if (cari.getRightNode() != null) {
+                cari = cari.getRightNode();
+            } else {
+                return cari;
+            }
+        }
+    }
+
     public void inOrderTranversal() {
         inOrderHelper(root);
     }
 
     private void inOrderHelper(TreeNode node) {
         if (node != null) {
-            inOrderHelper(node.getLeftNode());
             System.out.print(node.getData() + " ");
+            inOrderHelper(node.getLeftNode());
             inOrderHelper(node.getRightNode());
         }
     }

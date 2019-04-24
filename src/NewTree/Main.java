@@ -11,13 +11,10 @@ public class Main {
         System.out.print("Before Delete      : ");
         number.inOrderTranversal();
         System.out.println("");
-        number.delete(12);
-        number.delete(27);
-        number.delete(6);
-        number.delete(55);
+        number.delete(21);
         System.out.print("After Delete       : ");
         number.inOrderTranversal();
-        System.out.println("");
+        System.out.println(""); 
     }
 
 }

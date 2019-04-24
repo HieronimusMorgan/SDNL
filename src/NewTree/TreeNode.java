@@ -52,4 +52,8 @@ public class TreeNode {
     public void setRightNode(TreeNode rightNode) {
         this.rightNode = rightNode;
     }
+
+    public boolean isLeaf() {
+        return leftNode == null || rightNode == null;
+    }
 }
