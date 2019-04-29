@@ -8,12 +8,26 @@ public class Main {
         for (int i = 0; i < data.length; i++) {
             number.insertNode(data[i]);
         }
-        System.out.print("Before Delete      : ");
+        System.out.println("Before Delete : ");
+        System.out.print("In Order          : ");
         number.inOrderTranversal();
         System.out.println("");
+        System.out.print("Pre Order         : ");
+        number.preOrderTransversal();
+        System.out.println("");
+        System.out.print("Post Order        : ");
+        number.postOrderTransversal();
+        System.out.println("");
         number.delete(38);
-        System.out.print("After Delete       : ");
+        System.out.println("After Delete        : ");
+        System.out.print("In Order          : ");
         number.inOrderTranversal();
+        System.out.println("");
+        System.out.print("Pre Order         : ");
+        number.preOrderTransversal();
+        System.out.println("");
+        System.out.print("Post Order        : ");
+        number.postOrderTransversal();
         System.out.println("");
     }
 
