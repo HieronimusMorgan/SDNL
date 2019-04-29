@@ -5,6 +5,7 @@ public class TreeNode {
     private int data;
     private TreeNode leftNode;
     private TreeNode rightNode;
+    private TreeNode parent;
 
     public TreeNode() {
     }
@@ -53,7 +54,15 @@ public class TreeNode {
         this.rightNode = rightNode;
     }
 
+    public TreeNode getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode parent) {
+        this.parent = parent;
+    }
+
     public boolean isLeaf() {
-        return leftNode == null || rightNode == null;
+        return leftNode == null && rightNode == null;
     }
 }

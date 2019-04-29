@@ -72,20 +72,22 @@ public class Tree {
                 }
             }
         } else {
-            TreeNode predesessor = getPredeccessor(bantu);
-            System.out.println(predesessor.getData());
+            TreeNode predesessor = getPredeccessor(parent);
             if (bantu.getLeftNode() != null && bantu.getRightNode() != null) {
                 bantu.setData(predesessor.getData());
-                if (!predesessor.isLeaf()) {
-                    bantu.getLeftNode().setRightNode(predesessor.getLeftNode());
-//                    getCurrent(predesessor.getData()).setRightNode(predesessor.getLeftNode());                    
+                if (predesessor.isLeaf()) {
+                    TreeNode bantu1 = bantu;
+                    while (bantu.getRightNode() != null) {
+                        bantu1 = bantu;
+                        bantu = bantu.getRightNode();
+                    }
+                    bantu1.setRightNode(null);
                     return true;
-                }else{
-                    bantu.getLeftNode().setRightNode(null);
+                } else {
+                    bantu.setData(bantu.getLeftNode().getData());
+                    bantu.setLeftNode(null);
                     return true;
-//                    getCurrent(predesessor.getData()).setRightNode(null);
                 }
-//                return true;
             }
 
         }
@@ -115,15 +117,12 @@ public class Tree {
         return null;
     }
 
-    public TreeNode getPredeccessor(TreeNode cari) {
-        cari = cari.getLeftNode();
-        while (true) {
-            if (cari.getRightNode() != null) {
-                cari = cari.getRightNode();
-            } else {
-                return cari;
-            }
+    public TreeNode getPredeccessor(TreeNode del) {
+        TreeNode predeccessor = del;
+        while (predeccessor.getRightNode() != null) {
+            predeccessor = predeccessor.getRightNode();
         }
+        return predeccessor;
     }
 
     public void inOrderTranversal() {
