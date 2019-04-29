@@ -125,15 +125,39 @@ public class Tree {
         return predeccessor;
     }
 
+    public void preOrderTransversal() {
+        preOrderHelper(root);
+    }
+
     public void inOrderTranversal() {
         inOrderHelper(root);
     }
 
-    private void inOrderHelper(TreeNode node) {
+    public void postOrderTransversal() {
+        postOrderHelper(root);
+    }
+
+    private void preOrderHelper(TreeNode node) {
         if (node != null) {
             System.out.print(node.getData() + " ");
+            preOrderHelper(node.getLeftNode());
+            preOrderHelper(node.getRightNode());
+        }
+    }
+
+    private void inOrderHelper(TreeNode node) {
+        if (node != null) {
             inOrderHelper(node.getLeftNode());
+            System.out.print(node.getData() + " ");
             inOrderHelper(node.getRightNode());
+        }
+    }
+
+    private void postOrderHelper(TreeNode node) {
+        if (node != null) {
+            postOrderHelper(node.getLeftNode());
+            postOrderHelper(node.getRightNode());
+            System.out.print(node.getData() + " ");
         }
     }
 
