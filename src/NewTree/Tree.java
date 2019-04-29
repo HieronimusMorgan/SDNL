@@ -72,16 +72,16 @@ public class Tree {
                 }
             }
         } else {
-            TreeNode predesessor = getPredeccessor(parent);
-            if (bantu.getLeftNode() != null && bantu.getRightNode() != null) {
-                bantu.setData(predesessor.getData());
-                if (predesessor.isLeaf()) {
-                    TreeNode bantu1 = bantu;
+            if (key < root.getData()) {
+                TreeNode predeccessor = getPredeccessor(parent.getLeftNode());
+                bantu.setData(predeccessor.getData());
+                if (predeccessor.isLeaf()) {
+                    TreeNode cariKanan = bantu.getLeftNode();
                     while (bantu.getRightNode() != null) {
-                        bantu1 = bantu;
+                        cariKanan = bantu;
                         bantu = bantu.getRightNode();
                     }
-                    bantu1.setRightNode(null);
+                    cariKanan.setRightNode(null);
                     return true;
                 } else {
                     bantu.setData(bantu.getLeftNode().getData());
@@ -89,9 +89,8 @@ public class Tree {
                     return true;
                 }
             }
-
+            return false;
         }
-        return false;
     }
 
     public TreeNode getCurrent(int key) {

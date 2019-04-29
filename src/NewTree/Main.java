@@ -18,7 +18,7 @@ public class Main {
         System.out.print("Post Order        : ");
         number.postOrderTransversal();
         System.out.println("");
-        number.delete(38);
+        number.delete(21);
         System.out.println("After Delete        : ");
         System.out.print("In Order          : ");
         number.inOrderTranversal();
