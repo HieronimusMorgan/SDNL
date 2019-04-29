@@ -43,8 +43,7 @@ public class Tree {
     public boolean delete(int key) {
         TreeNode bantu = search(key);
         TreeNode parent = getCurrent(key);
-        if (bantu.getLeftNode() == null
-                && bantu.getRightNode() == null) {
+        if (bantu.getLeftNode() == null && bantu.getRightNode() == null) {
             if (parent.getLeftNode() == bantu) {
                 parent.setLeftNode(null);
                 return true;
@@ -72,7 +71,7 @@ public class Tree {
                 }
             }
         } else {
-            if (key < root.getData()) {
+            if (key <= root.getData()) {
                 TreeNode predeccessor = getPredeccessor(parent.getLeftNode());
                 bantu.setData(predeccessor.getData());
                 if (predeccessor.isLeaf()) {
