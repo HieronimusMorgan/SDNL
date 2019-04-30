@@ -72,7 +72,8 @@ public class Tree {
             }
         } else {
             if (key <= root.getData()) {
-                TreeNode predeccessor = getPredeccessor(parent.getLeftNode());
+                TreeNode predeccessor = getPredeccessor
+                (parent.getLeftNode());
                 bantu.setData(predeccessor.getData());
                 if (predeccessor.isLeaf()) {
                     TreeNode cariKanan = bantu.getLeftNode();
