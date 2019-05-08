@@ -5,6 +5,7 @@ public class StackTree {
     private ListTree stackListTree;
 
     public StackTree() {
+        stackListTree = new ListTree();
     }
 
     public void push(TreeNode node) {
@@ -20,6 +21,6 @@ public class StackTree {
     }
 
     public void print() {
-
+        stackListTree.print();
     }
 }
