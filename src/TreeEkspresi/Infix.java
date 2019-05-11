@@ -90,7 +90,8 @@ public class Infix {
                 } else if (karInfix.isOperator()) {
                     cek = opr.pop();
                     opr.push(cek);
-                    while ((cek != null) && (valensi(kar) <= valensi(cek.getData()))) {
+                    while ((cek != null) && (valensi(kar)
+                            <= valensi(cek.getData()))) {
                         opd.push(gabung());
                         cek = opr.pop();
                         opr.push(cek);
