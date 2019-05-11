@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package TreeEkspresi;
 
-/**
- *
- * @author asus
- */
 public class TreeTest {
 
     public static void main(String[] args) {
@@ -26,7 +17,7 @@ public class TreeTest {
         System.out.println("\nPostfix");
         tree.postOrderTransversal();
         System.out.println("\n\n");
-        
+
         String s2 = "(A+B)*((B-C)+D)";
         char notasi2[] = new char[s2.length()];
         s2.getChars(0, s2.length(), notasi2, 0);
@@ -40,7 +31,7 @@ public class TreeTest {
         System.out.println("\nPostfix");
         tree2.postOrderTransversal();
         System.out.println("\n\n");
-        
+
         String s3 = "(A+B*C)^((P-Q)*R)";
         char notasi3[] = new char[s3.length()];
         s3.getChars(0, s3.length(), notasi3, 0);
