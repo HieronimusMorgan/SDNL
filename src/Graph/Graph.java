@@ -84,8 +84,11 @@ public class Graph {
     @Override
     public String toString() {
         String a = "";
-        for (int i = 0; i < vertexList.length; i++) {
-            a = a + vertexList[i];
+        for (int i = 0; i < adjacencyMatrix.length; i++) {
+            for (int j = 0; j < adjacencyMatrix.length; j++) {
+                a = a + adjacencyMatrix[i][j] + "\t";
+            }
+            a += "\n";
         }
         return a;
     }

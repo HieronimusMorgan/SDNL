@@ -30,5 +30,30 @@ public class MainGraph {
 
         test.show();
         test.dfs();
+        System.out.println( test.toString());
+
+//        test.addVertex('a');
+//        test.addVertex('b');
+//        test.addVertex('c');
+//        test.addVertex('d');
+//        test.addVertex('e');
+//        test.addVertex('f');
+//        test.addVertex('g');
+//        test.addVertex('h');
+//        test.addVertex('i');
+//
+//        test.addEdge('a', 'i', 1);
+//        test.addEdge('a', 'b', 1);
+//        test.addEdge('a', 'f', 1);
+//        test.addEdge('b', 'c', 1);
+//        test.addEdge('b', 'e', 1);
+//        test.addEdge('c', 'e', 1);
+//        test.addEdge('c', 'd', 1);
+//        test.addEdge('d', 'h', 1);
+//        test.addEdge('d', 'g', 1);
+//        test.addEdge('e', 'g', 1);
+//        test.addEdge('g', 'f', 1);
+//        test.dfs();
+//        System.out.println(test.toString());
     }
 }
