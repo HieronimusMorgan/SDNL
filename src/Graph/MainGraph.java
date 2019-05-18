@@ -4,7 +4,7 @@ public class MainGraph {
 
     public static void main(String[] args) {
         Graph test = new Graph();
-
+        
         test.addVertex('a');
         test.addVertex('b');
         test.addVertex('c');

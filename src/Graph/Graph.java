@@ -65,8 +65,8 @@ public class Graph {
                 vertexList[bantu].setFlagVisited(true);
             }
             for (int i = countVertex - 1; i >= 0; i--) {
-                if (adjacencyMatrix[bantu][i] >= 1 && 
-                        vertexList[i].isFlagVisited() == false) {
+                if (adjacencyMatrix[bantu][i] >= 1
+                        && vertexList[i].isFlagVisited() == false) {
                     stack.push(i);
                 }
             }
