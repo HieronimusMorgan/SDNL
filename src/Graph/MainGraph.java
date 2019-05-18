@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Graph;
 
-/**
- *
- * @author asus
- */
 public class MainGraph {
 
     public static void main(String[] args) {
@@ -28,32 +19,12 @@ public class MainGraph {
         test.addEdge('c', 'f', 3);
         test.addEdge('e', 'f', 10);
 
+        System.out.println("Representasi Graph");
         test.show();
+        System.out.println("Depth First Search");
         test.dfs();
-        System.out.println( test.toString());
+        System.out.println("Adjacency Matrix");
+        System.out.println(test.toString());
 
-//        test.addVertex('a');
-//        test.addVertex('b');
-//        test.addVertex('c');
-//        test.addVertex('d');
-//        test.addVertex('e');
-//        test.addVertex('f');
-//        test.addVertex('g');
-//        test.addVertex('h');
-//        test.addVertex('i');
-//
-//        test.addEdge('a', 'i', 1);
-//        test.addEdge('a', 'b', 1);
-//        test.addEdge('a', 'f', 1);
-//        test.addEdge('b', 'c', 1);
-//        test.addEdge('b', 'e', 1);
-//        test.addEdge('c', 'e', 1);
-//        test.addEdge('c', 'd', 1);
-//        test.addEdge('d', 'h', 1);
-//        test.addEdge('d', 'g', 1);
-//        test.addEdge('e', 'g', 1);
-//        test.addEdge('g', 'f', 1);
-//        test.dfs();
-//        System.out.println(test.toString());
     }
 }
