@@ -1,6 +1,6 @@
 package Graph;
 
-import java.util.Stack;
+import java.util.*;
 
 public class Graph {
 
@@ -68,6 +68,25 @@ public class Graph {
                 if (adjacencyMatrix[bantu][i] >= 1
                         && vertexList[i].isFlagVisited() == false) {
                     stack.push(i);
+                }
+            }
+        }
+    }
+
+    public void bfs() {
+        int bantu;
+        Queue stack = new Queue();
+        stack.enqueue(0);
+        while (!stack.isEmpty()) {
+            bantu = (int) stack.dequeue();
+            if (!vertexList[bantu].isFlagVisited()) {
+                System.out.println(vertexList[bantu].getLabel() + " ");
+                vertexList[bantu].setFlagVisited(true);
+            }
+            for (int i = 0; i < countVertex; i++) {
+                if (adjacencyMatrix[bantu][i] == 1
+                        && vertexList[i].isFlagVisited() == false) {
+                    stack.enqueue(i);
                 }
             }
         }

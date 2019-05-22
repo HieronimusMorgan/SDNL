@@ -4,7 +4,7 @@ public class MainGraph {
 
     public static void main(String[] args) {
         Graph test = new Graph();
-        
+
         test.addVertex('a');
         test.addVertex('b');
         test.addVertex('c');
@@ -17,6 +17,7 @@ public class MainGraph {
         test.addEdge('b', 'e', 4);
         test.addEdge('b', 'f', 2);
         test.addEdge('c', 'f', 3);
+        test.addEdge('c', 'e', 2);
         test.addEdge('e', 'f', 10);
 
         System.out.println("Representasi Graph");
