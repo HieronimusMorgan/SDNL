@@ -75,21 +75,52 @@ public class Graph {
 
     public void bfs() {
         int bantu;
-        Queue stack = new Queue();
-        stack.enqueue(0);
-        while (!stack.isEmpty()) {
-            bantu = (int) stack.dequeue();
-            if (!vertexList[bantu].isFlagVisited()) {
-                System.out.println(vertexList[bantu].getLabel() + " ");
+        Queue q = new Queue(maxVertex);
+        q.enqueue(0);
+        while (!q.isEmpty()) {
+            bantu = q.dequeue();
+            if (vertexList[bantu].isFlagVisited() == false) {
+                System.out.print(vertexList[bantu].getLabel() + " ");
                 vertexList[bantu].setFlagVisited(true);
             }
             for (int i = 0; i < countVertex; i++) {
-                if (adjacencyMatrix[bantu][i] == 1
-                        && vertexList[i].isFlagVisited() == false) {
-                    stack.enqueue(i);
+                if ((adjacencyMatrix[bantu][i] > 0)
+                        && (vertexList[i].isFlagVisited() == false)) {
+                    q.enqueue(i);
                 }
             }
         }
+    }
+
+    public ArrayList<Edge> prim() {
+        ArrayList<Edge> primEdge = new ArrayList<>();
+        ArrayList<Integer> primVertex = new ArrayList<>();
+        primVertex.add(0);
+        vertexList[0].setFlagVisited(true);
+        while (primVertex.size() < countVertex) {
+            int tempMinWeight = maxVertex;
+            int tempMinIndekVertexI = -1;
+            int tempMinIndekVertexJ = -1;
+            for (int i = 0; i < primVertex.size(); i++) {
+                for (int j = 0; j < countVertex; j++) {
+                    if (adjacencyMatrix[i][j] > 0
+                            && !vertexList[j].isFlagVisited()
+                            && adjacencyMatrix[i][j] < tempMinWeight) {
+                        tempMinWeight = adjacencyMatrix[i][j];
+                        tempMinIndekVertexI = i;
+                        tempMinIndekVertexJ = j;
+                    }
+                }
+            }
+            primVertex.add(tempMinIndekVertexJ);
+            vertexList[tempMinIndekVertexJ].setFlagVisited(true);
+            Edge edge = new Edge();
+            edge.setVertexA(tempMinIndekVertexI);
+            edge.setVertexB(tempMinIndekVertexJ);
+            edge.setWeight(tempMinWeight);
+            primEdge.add(edge);
+        }
+        return primEdge;
     }
 
     @Override
