@@ -5,6 +5,8 @@
  */
 package Graph;
 
+import java.util.NoSuchElementException;
+
 /**
  *
  * @author basisb16
@@ -20,31 +22,40 @@ public class Queue {
     }
 
     public Queue(int size) {
-        this.size = size;
         elemen = new int[size];
+        size = 0;
     }
 
-    public boolean enqueue(int elemen) {
-        if (!isEmpty()) {
-            this.elemen[rear] = elemen;
-            rear++;
+    public boolean enqueue(int data) {
+        if (elemen.length != size) {
+            elemen[rear++] = data;
+            if (rear == elemen.length) {
+                rear = 0;
+            }
+            size++;
             return true;
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     public int dequeue() {
-        if (!isEmpty()) {
-            if (front != rear) {
-                int a = elemen[front];
-
-                front++;
-                return a;
+         if (!isEmpty()) {
+            if (size == 0) {
+                return -1;
+            } else {
+                int bantu = elemen[front];
+                if (front + 1 == elemen.length) {
+                    front = 0;
+                } else {
+                    front++;
+                }
+                size--;
+                return bantu;
             }
+        } else {
+            throw new NoSuchElementException();
         }
-        System.exit(0);
-        return 0;
     }
 
     public int size() {

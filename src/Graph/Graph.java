@@ -61,7 +61,7 @@ public class Graph {
         while (!stack.isEmpty()) {
             bantu = (int) stack.pop();
             if (!vertexList[bantu].isFlagVisited()) {
-                System.out.println(vertexList[bantu].getLabel() + " ");
+                System.out.print(vertexList[bantu].getLabel() + " ");
                 vertexList[bantu].setFlagVisited(true);
             }
             for (int i = countVertex - 1; i >= 0; i--) {

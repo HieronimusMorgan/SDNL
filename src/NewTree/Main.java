@@ -1,5 +1,8 @@
 package NewTree;
 
+import Graph.Edge;
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -29,6 +32,14 @@ public class Main {
         System.out.print("Post Order        : ");
         number.postOrderTransversal();
         System.out.println("");
+        
+//         test.bfs();
+//
+//        ArrayList<Edge> edge = test.prim();
+//        for(Edge edges : edge){
+//            System.out.println(edges.getVertexA() +"  "+edges.getVertexB()+" bbt "+edges.getWeight());
+            
+//        }
     }
 
 }
