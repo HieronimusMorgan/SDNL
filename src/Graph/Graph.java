@@ -67,10 +67,10 @@ public class Graph {
             for (int i = countVertex - 1; i >= 0; i--) {
                 if (adjacencyMatrix[bantu][i] >= 1
                         && vertexList[i].isFlagVisited() == false) {
-                     System.out.println("\t"+i + " true dengan bantu "+bantu);
+                    System.out.println("\t" + i + " true dengan bantu " + bantu);
                     stack.push(i);
-                }else{
-                    System.out.println("\t"+i + " false dengan bantu "+bantu);
+                } else {
+                    System.out.println("\t" + i + " false dengan bantu " + bantu);
                 }
             }
         }
@@ -89,10 +89,10 @@ public class Graph {
             for (int i = 0; i < countVertex; i++) {
                 if ((adjacencyMatrix[bantu][i] > 0)
                         && (vertexList[i].isFlagVisited() == false)) {
-                    System.out.println(i + " true dengan bantu "+bantu);
+                    System.out.println(i + " true dengan bantu " + bantu);
                     q.enqueue(i);
                 } else {
-                    System.out.println(i + " false dengan bantu "+bantu);
+                    System.out.println(i + " false dengan bantu " + bantu);
                 }
 
             }

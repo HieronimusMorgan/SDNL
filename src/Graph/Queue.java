@@ -2,7 +2,6 @@ package Graph;
 
 import java.util.NoSuchElementException;
 
-
 public class Queue {
 
     private int[] elemen;
@@ -32,7 +31,7 @@ public class Queue {
     }
 
     public int dequeue() {
-         if (!isEmpty()) {
+        if (!isEmpty()) {
             if (size == 0) {
                 return -1;
             } else {

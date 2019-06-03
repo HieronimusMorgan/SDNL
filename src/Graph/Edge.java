@@ -1,8 +1,7 @@
-
 package Graph;
 
-
 public class Edge {
+
     private int vertexA;
     private int vertexB;
     private int weight;
@@ -33,6 +32,5 @@ public class Edge {
     public void setWeight(int weight) {
         this.weight = weight;
     }
-    
-    
+
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MainGraph {
 
     public static void main(String[] args) {
-Graph test = new Graph();
+        Graph test = new Graph();
 
         test.addVertex('a');
         test.addVertex('b');
@@ -36,19 +36,11 @@ Graph test = new Graph();
         test.addEdge('h', 'i', 4);
         test.addEdge('h', 'j', 6);
         test.addEdge('i', 'j', 7);
-        
-
-//        System.out.println("Representasi Graph");
-//        test.show();
-//        System.out.println("Depth First Search");
-//        test.dfs();1
-//        test.bfs();
 
         ArrayList<Edge> edge = test.prim();
-        for(Edge edges : edge){
-//            System.out.println(edges.);
-            System.out.println(edges.getVertexA() +"  "+edges.getVertexB()+" bbt "+edges.getWeight());
-            
+        for (Edge edges : edge) {
+            System.out.println(edges.getVertexA() + "  "
+                    + edges.getVertexB() + " bobot " + edges.getWeight());
         }
         System.out.println("Adjacency Matrix");
         System.out.println(test.toString());
