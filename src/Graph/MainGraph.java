@@ -36,7 +36,7 @@ public class MainGraph {
         test.addEdge('h', 'i', 4);
         test.addEdge('h', 'j', 6);
         test.addEdge('i', 'j', 7);
-
+        System.out.println("Algorithm Prim");
         ArrayList<Edge> edge = test.prim();
         for (Edge edges : edge) {
             System.out.println(edges.getVertexA() + "  "
