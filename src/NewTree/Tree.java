@@ -71,9 +71,7 @@ public class Tree {
                 }
             }
         } else {
-            if (key <= root.getData()) {
-                TreeNode predeccessor = getPredeccessor
-                (parent.getLeftNode());
+                TreeNode predeccessor = getPredeccessor(bantu);
                 bantu.setData(predeccessor.getData());
                 if (predeccessor.isLeaf()) {
                     TreeNode cariKanan = bantu.getLeftNode();
@@ -87,9 +85,7 @@ public class Tree {
                     bantu.setData(bantu.getLeftNode().getData());
                     bantu.setLeftNode(null);
                     return true;
-                }
-            }
-            return false;
+                }   
         }
     }
 
@@ -117,11 +113,19 @@ public class Tree {
     }
 
     public TreeNode getPredeccessor(TreeNode del) {
-        TreeNode predeccessor = del;
-        while (predeccessor.getRightNode() != null) {
-            predeccessor = predeccessor.getRightNode();
+        if (del.getData() <= root.getData()) {
+            TreeNode predeccessor = del.getLeftNode();
+            while (predeccessor.getRightNode() != null) {
+                predeccessor = predeccessor.getRightNode();
+            }
+            return predeccessor;
+        } else {
+            TreeNode predeccessor = del;
+            while (predeccessor.getRightNode() != null) {
+                predeccessor = predeccessor.getRightNode();
+            }
+            return predeccessor;
         }
-        return predeccessor;
     }
 
     public void preOrderTransversal() {
