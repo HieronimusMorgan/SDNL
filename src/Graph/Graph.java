@@ -110,8 +110,7 @@ public class Graph {
             int tempMinIndekVertexJ = -1;
             for (int i = 0; i < primVertex.size(); i++) {
                 for (int j = 0; j < countVertex; j++) {
-                    if (adjacencyMatrix[i][j] > 0
-                            && !vertexList[j].isFlagVisited()
+                    if (adjacencyMatrix[i][j] > 0 && !vertexList[j].isFlagVisited()
                             && adjacencyMatrix[i][j] < tempMinWeight) {
                         tempMinWeight = adjacencyMatrix[i][j];
                         tempMinIndekVertexI = i;
