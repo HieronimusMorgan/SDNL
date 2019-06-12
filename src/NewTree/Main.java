@@ -13,33 +13,13 @@ public class Main {
         }
         System.out.println("Before Delete : ");
         System.out.print("In Order          : ");
-        number.inOrderTranversal();
-        System.out.println("");
-        System.out.print("Pre Order         : ");
         number.preOrderTransversal();
         System.out.println("");
-        System.out.print("Post Order        : ");
-        number.postOrderTransversal();
-        System.out.println("");
+        number.delete(71);
         number.delete(21);
         System.out.println("After Delete        : ");
         System.out.print("In Order          : ");
-        number.inOrderTranversal();
-        System.out.println("");
-        System.out.print("Pre Order         : ");
         number.preOrderTransversal();
-        System.out.println("");
-        System.out.print("Post Order        : ");
-        number.postOrderTransversal();
-        System.out.println("");
-        
-//         test.bfs();
-//
-//        ArrayList<Edge> edge = test.prim();
-//        for(Edge edges : edge){
-//            System.out.println(edges.getVertexA() +"  "+edges.getVertexB()+" bbt "+edges.getWeight());
-            
-//        }
     }
 
 }

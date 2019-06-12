@@ -114,7 +114,7 @@ public class Tree {
 
     public TreeNode getPredeccessor(TreeNode del) {
         if (del.getData() <= root.getData()) {
-            TreeNode predeccessor = del.getLeftNode();
+            TreeNode predeccessor = del;
             while (predeccessor.getRightNode() != null) {
                 predeccessor = predeccessor.getRightNode();
             }
