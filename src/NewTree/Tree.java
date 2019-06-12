@@ -71,21 +71,21 @@ public class Tree {
                 }
             }
         } else {
-                TreeNode predeccessor = getPredeccessor(bantu);
-                bantu.setData(predeccessor.getData());
-                if (predeccessor.isLeaf()) {
-                    TreeNode cariKanan = bantu.getLeftNode();
-                    while (bantu.getRightNode() != null) {
-                        cariKanan = bantu;
-                        bantu = bantu.getRightNode();
-                    }
-                    cariKanan.setRightNode(null);
-                    return true;
-                } else {
-                    bantu.setData(bantu.getLeftNode().getData());
-                    bantu.setLeftNode(null);
-                    return true;
-                }   
+            TreeNode predeccessor = getPredeccessor(bantu);
+            bantu.setData(predeccessor.getData());
+            if (predeccessor.isLeaf()) {
+                TreeNode cariKanan = bantu.getLeftNode();
+                while (bantu.getRightNode() != null) {
+                    cariKanan = bantu;
+                    bantu = bantu.getRightNode();
+                }
+                cariKanan.setRightNode(null);
+                return true;
+            } else {
+                bantu.setData(bantu.getLeftNode().getData());
+                bantu.setLeftNode(null);
+                return true;
+            }
         }
     }
 
@@ -113,19 +113,13 @@ public class Tree {
     }
 
     public TreeNode getPredeccessor(TreeNode del) {
-        if (del.getData() <= root.getData()) {
+      
             TreeNode predeccessor = del;
             while (predeccessor.getRightNode() != null) {
                 predeccessor = predeccessor.getRightNode();
             }
             return predeccessor;
-        } else {
-            TreeNode predeccessor = del;
-            while (predeccessor.getRightNode() != null) {
-                predeccessor = predeccessor.getRightNode();
-            }
-            return predeccessor;
-        }
+       
     }
 
     public void preOrderTransversal() {
